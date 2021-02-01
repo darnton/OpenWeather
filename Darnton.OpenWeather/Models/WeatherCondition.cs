@@ -1,25 +1,55 @@
 ﻿namespace Darnton.OpenWeather.Models
 {
+    /// <summary>
+    /// A description of weather conditions.
+    /// See <see href="https://openweathermap.org/weather-conditions"/>.
+    /// </summary>
     public class WeatherCondition
     {
+        /// <summary>
+        /// The <see cref="WeatherConditionCode"/>.
+        /// </summary>
         public WeatherConditionCode Id { get; set; }
+        /// <summary>
+        /// The name of the weather condition group.
+        /// </summary>
         public string Main { get; set; }
+        /// <summary>
+        /// The detailed description of the weather condition.
+        /// May be translated depending on the 'lang' query parameter.
+        /// </summary>
         public string Description { get; set; }
+        /// <summary>
+        /// The icon code for the weather condition.
+        /// See <see href="https://openweathermap.org/weather-conditions#Icon-list"/>.
+        /// </summary>
         public string Icon { get; set; }
     }
 
+    /// <summary>
+    /// A high-level enumeration of weather condition groups.
+    /// See <see href="https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2"/>.
+    /// See <see cref="WeatherConditionCode"/> for a more detailed breakdown.
+    /// </summary>
     public enum WeatherConditionGroup
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         Thunderstorm = 2,
         Drizzle = 3,
         Rain = 5,
         Snow = 6,
         Atmosphere = 7,
         Clouds = 8
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 
+    /// <summary>
+    /// An enumeration of weather conditions.
+    /// See <see href="https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2"/>.
+    /// </summary>
     public enum WeatherConditionCode
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         ThunderstormLightRain = 200,
         ThunderstormRain = 201,
         ThunderstormHeavyRain = 202,
@@ -80,5 +110,6 @@
         ScatteredClouds = 802,
         BrokenClouds = 803,
         OvercastClouds = 804,
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }
